@@ -9,6 +9,8 @@ dist
 # code coverage
 coverage
 *.lcov
+bun.lock
+bun-env.d.ts
 
 # logs
 logs

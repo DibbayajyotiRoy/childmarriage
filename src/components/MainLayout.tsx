@@ -4,12 +4,13 @@ import { Sidebar } from "./Sidebar";
 
 const MainLayout = () => {
   return (
-    <div className="flex h-screen w-screen bg-slate-100">
+    <div className="flex h-screen bg-white">
       <Sidebar />
-      <main className="flex-1 min-w-0">
-        {/* The Outlet will render the component for the current route */}
-        <Outlet />
-      </main>
+      <div className="flex-1 overflow-y-auto bg-slate-100">
+        <main className="p-8">
+          <Outlet />
+        </main>
+      </div>
     </div>
   );
 };

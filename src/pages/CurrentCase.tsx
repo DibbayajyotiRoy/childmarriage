@@ -16,6 +16,15 @@ const CaseDetailsPage = () => {
     );
   }
 
+  // Handle for submitting a new report
+  const handleSubmitReport = () => {
+    // In a real application, this would open a modal or make an API call.
+    // For this example, we'll use a simple alert to confirm the action.
+    alert(
+      `A new report for Case ID: ${caseData.id} has been submitted to the authorities.`
+    );
+  };
+
   // Handle status with spaces for the CSS class
   const statusClass = `status status-${caseData.status
     .toLowerCase()
@@ -44,17 +53,25 @@ const CaseDetailsPage = () => {
         <h3>Full Details:</h3>
         <p>{caseData.details}</p>
       </div>
-      <Link
-        to={`/case/${caseData.id}/report`}
+
+      {/* --- MODIFIED SECTION: From Link to Button --- */}
+      <button
+        onClick={handleSubmitReport}
         className="details-button"
         style={{
-          backgroundColor: "#007bff",
+          backgroundColor: "#28a745", // Green for "submit"
           display: "block",
           marginBottom: "1rem",
+          width: "100%",
+          border: "none",
+          color: "white",
+          cursor: "pointer",
         }}
       >
-        Open Secure Chat with Authorities
-      </Link>
+        Submit a New Report on This Case
+      </button>
+      {/* --- END MODIFIED SECTION --- */}
+
       <Link to="/" className="details-button">
         ← Back to Case List
       </Link>
