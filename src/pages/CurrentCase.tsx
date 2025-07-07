@@ -1,4 +1,3 @@
-import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { dummyCases } from "../data/cases";
 
@@ -45,6 +44,17 @@ const CaseDetailsPage = () => {
         <h3>Full Details:</h3>
         <p>{caseData.details}</p>
       </div>
+      <Link
+        to={`/case/${caseData.id}/report`}
+        className="details-button"
+        style={{
+          backgroundColor: "#007bff",
+          display: "block",
+          marginBottom: "1rem",
+        }}
+      >
+        Open Secure Chat with Authorities
+      </Link>
       <Link to="/" className="details-button">
         ← Back to Case List
       </Link>

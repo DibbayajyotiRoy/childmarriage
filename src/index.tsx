@@ -1,39 +1,20 @@
-import { serve } from "bun";
-import index from "./index.html";
+import React from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App"; // This imports your main App component
+import "./index.css"; // This imports your global styles
 
-const server = serve({
-  routes: {
-    // Serve index.html for all unmatched routes.
-    "/*": index,
+// Find the 'root' div in your index.html
+const container = document.getElementById("root");
 
-    "/api/hello": {
-      async GET(req) {
-        return Response.json({
-          message: "Hello, world!",
-          method: "GET",
-        });
-      },
-      async PUT(req) {
-        return Response.json({
-          message: "Hello, world!",
-          method: "PUT",
-        });
-      },
-    },
+// This is a safety check
+if (!container) {
+  throw new Error("Could not find root element to mount to");
+}
 
-    "/api/hello/:name": async req => {
-      const name = req.params.name;
-      return Response.json({
-        message: `Hello, ${name}!`,
-      });
-    },
-  },
-
-  development: process.env.NODE_ENV !== "production" && {
-    // Enable browser hot reloading in development
-    hmr: true,
-
-    // Echo console logs from the browser to the server
-    console: true,
-  },
-});
+// Create a React root and render your App component into it
+const root = createRoot(container);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
