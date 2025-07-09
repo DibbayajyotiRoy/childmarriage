@@ -1,4 +1,4 @@
-import { Case } from '../data/cases'; // We'll define this type in the next step
+import { Case } from '../data/useCases'; // We'll define this type in the next step
 
 /**
  * Calculates the real-time, effective status of a case based on its properties

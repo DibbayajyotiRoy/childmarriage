@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import type { Case } from "../data/cases";
+import type { Case } from "../data/useCases";
 
 const CaseListItem: React.FC<{ caseItem: Case }> = ({ caseItem }) => {
   return (

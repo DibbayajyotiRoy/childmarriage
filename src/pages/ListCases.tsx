@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { dummyCases } from "../data/cases";
+import { dummyCases } from "../data/useCases";
 import CaseCard from "../components/CaseCard";
 import CaseListItem from "../components/CaseListItem";
 

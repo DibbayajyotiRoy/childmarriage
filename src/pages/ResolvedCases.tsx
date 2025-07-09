@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { dummyCases } from "../data/cases";
+import { dummyCases } from "../data/useCases";
 
 // Get only the resolved cases once
 const allResolvedCases = dummyCases.filter((c) => c.status === "Resolved");

@@ -1,36 +1,52 @@
-# dependencies (bun install)
-node_modules
-
-# output
-out
-dist
+# -------------------------------
+# Dependencies
+# -------------------------------
+node_modules/
 *.tgz
 
-# code coverage
-coverage
+# -------------------------------
+# Output directories
+# -------------------------------
+out/
+dist/
+
+# -------------------------------
+# Code coverage
+# -------------------------------
+coverage/
 *.lcov
-bun.lock
-bun-env.d.ts
 
-# logs
-logs
-_.log
-report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
+# -------------------------------
+# Bun-specific files
+# -------------------------------
+bun.lockb
+bunfig.toml
 
-# dotenv environment variable files
+# -------------------------------
+# Logs
+# -------------------------------
+logs/
+*.log
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# -------------------------------
+# Dotenv files
+# -------------------------------
 .env
+.env.local
 .env.development.local
 .env.test.local
 .env.production.local
-.env.local
 
-# caches
+# -------------------------------
+# Caches and build info
+# -------------------------------
+.cache/
 .eslintcache
-.cache
 *.tsbuildinfo
 
-# IntelliJ based IDEs
-.idea
-
-# Finder (MacOS) folder config
+# -------------------------------
+# IDE/editor settings
+# -------------------------------
+.idea/
 .DS_Store

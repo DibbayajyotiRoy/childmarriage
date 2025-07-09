@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { dummyCases } from "../data/cases";
+import { dummyCases } from "../data/useCases";
 
 const CaseDetailsPage = () => {
   const { caseId } = useParams<{ caseId: string }>();
